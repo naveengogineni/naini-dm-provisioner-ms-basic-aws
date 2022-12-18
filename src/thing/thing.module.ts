@@ -4,6 +4,6 @@ import { ThingService } from "./thing.service";
 
 @Module({
     controllers: [ThingController],
-    providers: [ThingService]
+    providers: [ThingService],
 })
 export class ThingModule {}
