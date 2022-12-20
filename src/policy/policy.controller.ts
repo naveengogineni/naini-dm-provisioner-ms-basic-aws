@@ -6,7 +6,7 @@ export class PolicyController {
     constructor(private policyService: PolicyService) {}
 
     @Get()
-    policies() {
-        return this.policyService.policies();
+    async policies() {
+        return await this.policyService.policies();
     }
 }

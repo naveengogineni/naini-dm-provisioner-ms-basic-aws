@@ -6,7 +6,7 @@ export class ThingController {
     constructor(private thingService: ThingService) {}
 
     @Get()
-    things() {
-        return this.thingService.things();
+    async things() {
+        return await this.thingService.things();
     }
 }

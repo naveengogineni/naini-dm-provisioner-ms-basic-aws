@@ -1,9 +1,8 @@
-import { Injectable } from "@nestjs/common";
-import { Iot } from "aws-sdk";
+import { Injectable } from '@nestjs/common';
+import { Iot } from 'aws-sdk';
 
 @Injectable()
-export class PolicyService {
-
+export class CertificateService {
     iot = new Iot({
         credentials: {
             accessKeyId: 'AKIAUTX6BDY4UWLU3ZUF',
@@ -12,14 +11,14 @@ export class PolicyService {
         region: 'ap-northeast-1'
         });
 
-    async policies() {
+    async certificates() {
 
     var params = {
         
     };
 
     try {
-        let data = (await this.iot.listPolicies(params).promise());
+        let data = (await this.iot.listCertificates(params).promise());
         return { data: data};
     } catch (error) {
         return {error: error}
