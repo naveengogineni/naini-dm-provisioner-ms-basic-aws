@@ -28,6 +28,8 @@
 
 ## Installation
 
+Note: Node, NPM, and Yarn should be installed to run this project.
+
 ```bash
 $ npm install
 ```
@@ -38,8 +40,12 @@ $ npm install
 # development
 $ npm run start
 
+$ yarn start
+
 # watch mode
 $ npm run start:dev
+
+$ yarn start:dev
 
 # production mode
 $ npm run start:prod
