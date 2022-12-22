@@ -1,5 +1,5 @@
 import { Controller, Get } from '@nestjs/common';
-import { CertificateService } from './certificate.service';
+import { CertificateService } from './certificates.service';
 
 @Controller('certificates')
 export class CertificateController {

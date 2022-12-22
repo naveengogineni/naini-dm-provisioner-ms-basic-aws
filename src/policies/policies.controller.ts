@@ -1,5 +1,5 @@
 import { Controller, Get } from "@nestjs/common";
-import { PolicyService } from "./policy.service";
+import { PolicyService } from "./policies.service";
 
 @Controller('policies')
 export class PolicyController {
