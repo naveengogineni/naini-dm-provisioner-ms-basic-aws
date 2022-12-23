@@ -27,4 +27,20 @@ export class ThingService {
     }
 
   }
+
+  async thing(thingName: string) {
+
+    var params = {
+      thingName: thingName,
+    };
+
+    try {
+      let data = (await this.iot.describeThing(params).promise());
+      return {data: data}
+    } catch (error) {
+      return {error: error}
+    }
+    
+  }
+
 }

@@ -26,4 +26,18 @@ export class PolicyService {
     }
 
     }
+
+    async attachedPolicies(targetARN: string) {
+
+        var params = {
+            target: targetARN,
+        };
+    
+        try {
+            let data = (await this.iot.listAttachedPolicies(params).promise());
+            return { data: data};
+        } catch (error) {
+            return {error: error}
+        }
+    }
 }
