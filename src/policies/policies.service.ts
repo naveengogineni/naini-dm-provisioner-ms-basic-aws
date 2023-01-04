@@ -13,26 +13,19 @@ export class PolicyService {
         });
 
     async policies() {
-
-    var params = {
-        
-    };
-
-    try {
-        let data = (await this.iot.listPolicies(params).promise());
-        return { data: data};
-    } catch (error) {
-        return {error: error}
-    }
-
+        var params = {}
+        try {
+            let data = (await this.iot.listPolicies(params).promise());
+            return { data: data};
+        } catch (error) {
+            return {error: error}
+        }
     }
 
     async attachedPolicies(targetARN: string) {
-
         var params = {
             target: targetARN,
         };
-    
         try {
             let data = (await this.iot.listAttachedPolicies(params).promise());
             return { data: data};
@@ -40,4 +33,5 @@ export class PolicyService {
             return {error: error}
         }
     }
+    
 }
