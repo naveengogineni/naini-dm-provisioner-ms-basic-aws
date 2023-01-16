@@ -5,8 +5,8 @@ import { Iot } from 'aws-sdk';
 export class CertificateService {
     iot = new Iot({
         credentials: {
-            accessKeyId: 'AKIAUTX6BDY4UWLU3ZUF',
-            secretAccessKey: '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',
+            accessKeyId: 'AKIAUTX6BDY45I7HWU5O',
+            secretAccessKey: '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',
         },
         region: 'ap-northeast-1'
         });
@@ -24,5 +24,9 @@ export class CertificateService {
         return {error: error}
     }
 
+    }
+
+    async createCertificate(body) {
+        return {'msg': 'Certificate created'}
     }
 }

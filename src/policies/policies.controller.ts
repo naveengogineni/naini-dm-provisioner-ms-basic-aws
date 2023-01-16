@@ -1,4 +1,4 @@
-import { Controller, Get, Query } from "@nestjs/common";
+import { Body, Controller, Get, Post, Query } from "@nestjs/common";
 import { PolicyService } from "./policies.service";
 
 @Controller('policies')
@@ -13,5 +13,10 @@ export class PolicyController {
     @Get('attached')
     async attachedPolicies(@Query('targetARN') targetARN: string) {
         return await this.policyService.attachedPolicies(targetARN);
+    }
+
+    @Post()
+    async createPolicy(@Body() body: any) {
+        return await this.policyService.createPolicy(body);
     }
 }

@@ -6,8 +6,8 @@ export class ThingService {
 
   iot = new Iot({
     credentials: {
-      accessKeyId: 'AKIAUTX6BDY4UWLU3ZUF',
-      secretAccessKey: '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',
+      accessKeyId: 'AKIAUTX6BDY45I7HWU5O',
+      secretAccessKey: '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',
     },
     region: 'ap-northeast-1'
   });
@@ -41,6 +41,17 @@ export class ThingService {
       return {error: error}
     }
     
+  }
+
+  async createThing(body) {
+    console.log(body);
+
+    try {
+      let data = (await this.iot.createThing(body).promise());
+      return {data: data}
+    } catch(error) {
+      return {error: error}
+    }
   }
 
 }
