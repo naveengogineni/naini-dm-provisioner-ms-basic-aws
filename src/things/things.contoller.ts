@@ -1,4 +1,5 @@
 import { Body, Controller, Get, Param, Post } from "@nestjs/common";
+import { createThingDto } from "src/dto/things.dto";
 import { ThingService } from "./things.service";
 
 @Controller('things')
@@ -16,7 +17,7 @@ export class ThingController {
     }
 
     @Post()
-    async create(@Body() body: any) {
-        return await this.thingService.create(body);
+    async create(@Body() createThingDto: createThingDto) {
+        return await this.thingService.create(createThingDto);
     }
 }

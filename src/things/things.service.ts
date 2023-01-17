@@ -1,5 +1,6 @@
 import { Injectable } from "@nestjs/common";
 import { Iot } from 'aws-sdk';
+import { createThingDto } from "src/dto/things.dto";
 
 @Injectable()
 export class ThingService {
@@ -36,21 +37,21 @@ export class ThingService {
 
     try {
       let data = (await this.iot.describeThing(params).promise());
-      return {data: data}
+      return data
     } catch (error) {
-      return {error: error}
+      return error
     }
     
   }
 
-  async create(body) {
-    console.log(body);
+  async create(createThingDto: createThingDto) {
+    console.log(createThingDto);
 
     try {
-      let data = (await this.iot.createThing(body).promise());
-      return {data: data}
+      let data = (await this.iot.createThing(createThingDto).promise());
+      return data
     } catch(error) {
-      return {error: error}
+      return error
     }
   }
 
