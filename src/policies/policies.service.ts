@@ -34,7 +34,7 @@ export class PolicyService {
         }
     }
 
-    async createPolicy(body) {
+    async create(body) {
         return {'msg': 'Policy created'}
     }
     

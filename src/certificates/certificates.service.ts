@@ -26,7 +26,7 @@ export class CertificateService {
 
     }
 
-    async createCertificate(body) {
+    async create(body) {
         return {'msg': 'Certificate created'}
     }
 }

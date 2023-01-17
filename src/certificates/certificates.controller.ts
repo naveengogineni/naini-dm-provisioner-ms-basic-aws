@@ -11,8 +11,8 @@ export class CertificateController {
     }
 
     @Post()
-    async createCertificate(@Body() body: any) {
-        return await this.certificateService.createCertificate(body);
+    async create(@Body() body: any) {
+        return await this.certificateService.create(body);
     }
 
 }

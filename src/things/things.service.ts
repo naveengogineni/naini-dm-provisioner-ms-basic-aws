@@ -43,7 +43,7 @@ export class ThingService {
     
   }
 
-  async createThing(body) {
+  async create(body) {
     console.log(body);
 
     try {

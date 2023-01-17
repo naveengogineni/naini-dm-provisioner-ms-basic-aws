@@ -16,7 +16,7 @@ export class ThingController {
     }
 
     @Post()
-    async createThing(@Body() body: any) {
-        return await this.thingService.createThing(body);
+    async create(@Body() body: any) {
+        return await this.thingService.create(body);
     }
 }

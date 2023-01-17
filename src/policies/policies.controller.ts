@@ -16,7 +16,7 @@ export class PolicyController {
     }
 
     @Post()
-    async createPolicy(@Body() body: any) {
-        return await this.policyService.createPolicy(body);
+    async create(@Body() body: any) {
+        return await this.policyService.create(body);
     }
 }
